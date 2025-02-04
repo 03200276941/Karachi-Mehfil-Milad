@@ -1,0 +1,76 @@
+<html>
+ <head>
+  <title>
+   Karachi Mehfil Milad Form
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   .form-container {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .form-container:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 font-roboto">
+  <div class="container mx-auto p-4">
+   <div class="max-w-md mx-auto bg-white rounded-lg shadow-lg overflow-hidden md:max-w-lg form-container">
+    <div class="md:flex">
+     <div class="w-full p-6">
+      <div class="text-center">
+       <h2 class="text-3xl font-bold text-gray-700">
+        Karachi Mehfil Milad 
+       </h2>
+       <img alt="A beautiful view of Masjid Nabawi with its green dome and minarets" class="mx-auto my-4" height="200" src="https://storage.googleapis.com/a1aa/image/Qd80peBAg2zRFByawoKEXu9r2GdLUaFflxVG8p_Fuq0.jpg" width="300"/>
+      </div>
+      <form class="mt-6">
+       <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+         Name
+        </label>
+        <input class="shadow-lg appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" placeholder="Enter your name" type="text"/>
+       </div>
+       <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+         Address
+        </label>
+        <input class="shadow-lg appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="address" placeholder="Enter your address" type="text"/>
+       </div>
+       <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="contact">
+         Contact Number
+        </label>
+        <input class="shadow-lg appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact" placeholder="Enter your contact number" type="text"/>
+       </div>
+       <div class="flex items-center justify-between">
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:shadow-outline transform transition-transform hover:scale-105" type="button" onclick="shareNumber()">
+         Submit
+        </button>
+       </div>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+   function shareNumber() {
+        const name = document.getElementById('name').value;
+        const address = document.getElementById('address').value;
+        const contact = document.getElementById('contact').value;
+        
+        const message = `Name: ${name}\nAddress: ${address}\nContact: ${contact}\n\nPlease contact me at 03200276941`;
+        
+        // Encode the message to pass it in the URL
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/923200276941?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+   }
+  </script>
+ </body>
+</html>
